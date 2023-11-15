@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.bicam.dslist.dto.GameMinDTO;
-import br.com.bicam.dslist.entities.Game;
+// import br.com.bicam.dslist.entities.Game;
 import br.com.bicam.dslist.repositories.GameRepository;
 
 @Service
-// @Component
+//  ou @Component
 public class GameService {
 
     @Autowired
     private GameRepository gameRepository;
 
-    public List<Game> findAll(){
+    public List<GameMinDTO> findAll(){
 
         var result = gameRepository.findAll();
-        // List<Game> = gameRepository.findAll();
+        List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
         
-        return result;
+        return dto;
     }
 
 }
