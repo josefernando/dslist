@@ -4,4 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.bicam.dslist.GameList;
 
-public interface GameListRepository extends JpaRepository<GameList, Long>{}
+public interface GameListRepository extends JpaRepository<GameList, Long>{
+
+
+
+    
+}

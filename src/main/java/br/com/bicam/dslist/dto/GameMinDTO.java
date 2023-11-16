@@ -1,6 +1,7 @@
 package br.com.bicam.dslist.dto;
 
 import br.com.bicam.dslist.entities.Game;
+import br.com.bicam.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -16,6 +17,14 @@ public class GameMinDTO {
         this.year = entity.getYear();
         this.imgUrl = entity.getImgUrl();
         this.shortDescription = entity.getShortDescription();
+    }
+
+        public GameMinDTO(GameMinProjection projection) {
+        this.id = projection.getId();
+        this.title = projection.getTitle();
+        this.year = projection.getYear();
+        this.imgUrl = projection.getImgUrl();
+        this.shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
